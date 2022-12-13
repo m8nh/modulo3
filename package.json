@@ -1,0 +1,26 @@
+{
+  "name": "atv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m8nh/modulo3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m8nh/modulo3/issues"
+  },
+  "homepage": "https://gnoithub.com/m8nh/modulo3#readme",
+  "devDependencies": {
+    "cfonts": "^3.1.1"
+  },
+  "dependencies": {
+    "axios": "^1.2.1"
+  }
+}
