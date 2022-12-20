@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./week3/th/6/app.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,9 @@
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
     "express": "^4.18.2",
+    "fs": "^0.0.1-security",
     "http-server": "^14.1.1",
+    "nodemon": "^2.0.20",
     "qs": "^6.11.0",
     "router": "^1.3.7",
     "string_decoder": "^1.3.0",
