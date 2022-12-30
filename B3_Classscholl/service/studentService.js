@@ -17,16 +17,17 @@ class StudentService {
         })
     }
 
-    save(student) {
+    save(data) {
+        
         let connect = connection1.getConnection();
         return new Promise((resolve, reject) => {
-            let sql = `insert into studentmanager.student(name, age, address,idGrade)
-                       values ('${student.name}', ${student.age}, '${student.address}',${student.idGrade})`;
+            let sql = `insert into student(name, age, address,iDGrade)
+                       values ('${student.name}', '${student.age}', '${student.address}',${student.iDGrade})`
             connect.query(sql, (err) => {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve('Thanh cong');
+                    resolve(sql);
                 }
             })
         })

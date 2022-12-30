@@ -6,7 +6,7 @@ class Connection {
         user: 'root',
         password: 'minh1729',
         charset: 'utf8_general_ci',
-        database: 'studentmanager'
+        database: 'Classification'
     }
 
     getConnection() {

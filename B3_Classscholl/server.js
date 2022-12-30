@@ -1,4 +1,4 @@
-const http1 = require('http');
+const http = require('http');
 const url = require('url');
 const router = require('./controller/router')
 const notFound = require('./controller/handleRouter/notFound')
@@ -15,7 +15,7 @@ const typeFile = {
     'eot': 'application/vnd.ms-fontobject'
 }
 
-const server = http1.createServer((req1, res) => {
+const server = http.createServer((req1, res) => {
     let pathName = url.parse(req1.url, true).pathname;
     const checkPath = pathName.match(/\.js|\.css|\.png|\.jpg|\.ttf|\.woff|\.woff2|\.eot/);
     if (checkPath) {
@@ -44,6 +44,6 @@ const server = http1.createServer((req1, res) => {
         chosenHandle(req1, res, id);
     }
 })
-server.listen(8080, () => {
+server.listen(3000, () => {
     console.log('Server is running')
 })

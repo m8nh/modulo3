@@ -1,5 +1,5 @@
 const fs1 = require('fs');
-const studentService = require('../../service/studentService')
+const studentService = require('../../service/gradeService')
 const gradeService = require('../../service/gradeService')
 const qs = require('qs')
 
@@ -73,7 +73,7 @@ class HomeHandleRouter {
                     let options = '';
                     grades.map(grade => {
                         options += `
-                                  <option value=${grade.idGrade}>${grade.nameGrade}</option>
+                                  <option value=${grade.iDGrade}>${grade.nameGrade}</option>
                                   `
                     })
                     createHtml = createHtml.replace('{grades}',options)
@@ -92,7 +92,7 @@ class HomeHandleRouter {
                     console.log(err)
                 } else {
                     const product = qs.parse(data1);
-                    const mess = await studentService.save(product);
+                    await studentService.save(product);
                     res.writeHead(301, {location: '/home'});
                     res.end();
                 }
