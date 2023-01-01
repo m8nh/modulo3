@@ -17,7 +17,7 @@ class StudentService {
         })
     }
 
-    save(data) {
+    save(student) {
         
         let connect = connection1.getConnection();
         return new Promise((resolve, reject) => {
@@ -36,8 +36,8 @@ class StudentService {
     remove(id) {
         let connect = connection1.getConnection();
         let sql = `delete
-                   from studentmanager.student
-                   where id = ${id}`
+                   from Classification.student
+                   where ID = ${id}`
         return new Promise((resolve, reject) => {
             connect.query(sql, (err) => {
                 if (err) {

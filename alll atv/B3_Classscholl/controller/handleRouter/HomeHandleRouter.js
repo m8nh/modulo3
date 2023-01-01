@@ -1,5 +1,5 @@
 const fs1 = require('fs');
-const studentService = require('../../service/gradeService')
+const studentService = require('../../service/studentService')
 const gradeService = require('../../service/gradeService')
 const qs = require('qs')
 
@@ -10,9 +10,9 @@ class HomeHandleRouter {
             tbody +=
                 `<tr>
                             <td>${index + 1}</td>
-                            <td>${student.name}</td>
-                            <td>${student.age}</td>
-                            <td>${student.address}</td>
+                            <td>${student.Name}</td>
+                            <td>${student.Age}</td>
+                            <td>${student.Address}</td>
                             <td>${student.nameGrade}</td>
                             <!--<td><img src="/public/${student.image}" alt="khong co" style="width: 50px;height: 50px"></td>-->
                             <td><a href="/edit/${student.id}"><button>Sua</button></td>
@@ -103,11 +103,13 @@ class HomeHandleRouter {
     async deleteProduct(req, res, id) {
         if (req.method === 'GET') {
             fs1.readFile('./views/delete.html', "utf-8", async (err, deleteHtml) => {
+              let studentId = await studentService.findAll()
+              console.log(studentId[0].ID);
                 if (err) {
                     console.log(err.message)
                 } else {
                     res.writeHead(200, 'text/html');
-                    deleteHtml = deleteHtml.replace('{id}', id)
+                    deleteHtml = deleteHtml.replace('{id}', studentId[0].ID)
                     res.write(deleteHtml);
                     res.end();
                 }

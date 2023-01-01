@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./week3/th/6/app.js"
+    "start": "nodemon ./B3_Classscholl/server.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,8 @@
   "dependencies": {
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
+    "cookie": "^0.5.0",
+    "cookies": "^0.8.0",
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "http-server": "^14.1.1",
